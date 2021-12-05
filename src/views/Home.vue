@@ -41,7 +41,7 @@ export default {
   methods: {
     getCursos(){
       let vue = this;
-      axios.get('cursos')
+      vue.axios.get('cursos')
       .then(res => {
         vue.cursos = res.data
       })

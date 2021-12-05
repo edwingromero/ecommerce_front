@@ -34,7 +34,7 @@ export default {
       form.curso_id = vue.curso.id;
 
       vue.isLoading = true;
-      axios.post('home-votar',form)
+      vue.axios.post('home-votar',form)
       .then(res => {
         EventBus.$emit('updateCurso',res.data);
         vue.isLoading = false;
