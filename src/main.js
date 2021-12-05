@@ -24,7 +24,7 @@ import createAuthRefreshInterceptor from 'axios-auth-refresh';
 
 
 // Function that will be called to refresh authorization
-const refreshAuthLogic = failedRequest => axios.post('https://ecommerce_back.test/api/refresh',{},{
+const refreshAuthLogic = async failedRequest => await axios.post('https://ecommerce_back.test/api/refresh',{},{
   headers: { Authorization: `Bearer ${store.state.token.access_token}` }
 }).then(tokenRefreshResponse => {
     store.commit('setToken',tokenRefreshResponse.data);
